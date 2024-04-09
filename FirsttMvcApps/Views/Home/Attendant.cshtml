@@ -1,0 +1,17 @@
+﻿@model FirsttMvcApps.Models.Person
+.@{
+    ViewBag.Title = "Attendant Details";
+}
+
+<div class=" card" style="width: 18rem;">
+
+   <img class="card-img-top" src="~/images/slika5.jpg"alt="korisnik">
+   <div class="card-body">
+
+       <h5 class="card-title">@Model.FirstName @Model.LastName</h5>
+
+       <p>@Model.DateOfBirth</p>
+
+   </div>
+
+</div>

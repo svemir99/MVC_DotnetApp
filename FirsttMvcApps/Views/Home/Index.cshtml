@@ -1,0 +1,166 @@
+﻿@model FirsttMvcApps.Models.Person
+
+
+
+@using FirsttMvcApps;
+
+
+
+
+
+@using FirsttMvcApps.Models
+
+@{
+
+    ViewBag.Title = "Home Page";
+    
+}
+
+
+
+
+@section Scripts{
+
+    <script type="text/javascript"src="~/lib/jquery/dist/jquery.js"></script>
+}
+
+
+
+
+
+@if (TempData["FirstName"] != null)
+{
+   <div class="alert alert-success alert-dismissible fade show"role="alert">
+
+You successfully add new attendant:
+
+<strong>@TempData["firstName"]</strong>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+</div>
+
+
+}
+
+
+
+
+
+
+<div class="col-md-6">
+
+    <div class="card">
+        <div class="card-header">
+            Add attendant:
+        </div>
+
+
+
+
+
+
+
+        <div class="card-body">
+
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+
+
+                <div class="form-floating mb-3">
+                    @Html.TextBoxFor(m => m.FirstName, null, new { @class = "form-control", autocomplete = "off" })
+
+                    @Html.LabelFor(m => m.FirstName)
+
+
+                    @Html.ValidationMessageFor(m => m.FirstName, null, new{@clas="text-danger smal"})
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="form-floating mb-3">
+
+
+
+                    @Html.TextBoxFor(m => m.LastName, null, new { @class = "form-control", autocomplete = "off" })
+
+                    @Html.LabelFor(m => m.LastName)
+
+
+                    @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "form-control", autocomplete = "off" })
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="form-floating mb-3">
+
+
+                    @Html.TextBoxFor(m => m.DateOfBirth, null, new { @class = "form-control", type = "date", value="2010-01-01" })
+
+
+                    @Html.LabelFor(m => m.DateOfBirth)
+
+
+                    @Html.ValidationMessageFor(m => m.DateOfBirth, null, new { @class = "form-control", autocomplete = "off" })
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <input class="btn btn-primary" type="submit" value="Add">
+
+
+
+            }
+
+              
+                  
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="col-md-6">
+
+    <partial name="_PersonList" />
+
+</div>
+
+
+
+
+
+
+
+
+
+
+  
+
+

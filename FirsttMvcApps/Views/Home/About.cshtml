@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+
+<button id="get-btn">Get</button>
+<p id="content-container"></p>
+
+
+<script>
+
+    window.onload = function () {
+
+        var button = document.getElementById("get-btn");
+        button.addEventListener("click", function () {
+
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    document.getElementById("content-container").innerHTML
+                        = xhttp.responseText;
+                }
+            };
+
+            xhttp.open("GET", "../../content.txt", true);
+            xhttp.send();
+        });
+    }
+</script>

@@ -1,0 +1,22 @@
+<form [formGroup]="service.personFormModel"
+      (ngSubmit)="onAttendantSave()">
+  <div>
+    <label for="firstName">First Name</label>
+    <input autocomplete="off" id="firstName" name="firstName"
+           placeholder="First name" type="text" value=""
+           formControlName="firstName">
+  </div>
+  <div>
+    <label for="lastName">Last name:</label>
+    <input autocomplete="off" id="lastName" name="lastName"
+           placeholder="Last name" type="text" value="" formControlName="lastName">
+  </div>
+  <div>
+    <label for="dateOfBirth">Date of birth:</label>
+    <input id="dateOfBirth" name="dateOfBirth" placeholder="Date of
+birth" type="date" value="" formControlName="dateOfBirth">
+  </div>
+  <div>
+    <input class="btn btn-primary" type="submit" value="Add">
+  </div>
+</form>

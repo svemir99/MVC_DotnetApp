@@ -1,0 +1,48 @@
+﻿@using FirsttMvcApps.Models;
+
+
+
+
+
+<div class="card">
+<div class="card-header">
+ Attendants:
+</div>
+<div class="card-body">
+
+
+        @if (Attendance.GetAttendants().Count == 0)
+        {
+            <p>Currently there are no attendants... Add them!</p>
+        }
+        else
+        {
+            int counter = 0;
+
+            <table class="table table-sm table-hover">
+
+                @foreach (Person person in Attendance.GetAttendants())
+                {
+                    counter++;
+                    <tr>
+                        <td>@counter.</td>
+                        <td>@person.FirstName @person.LastName</td>
+                        <td>@person.DateOfBirth.ToString("dd/MM/yyyy")</td>
+
+                        
+
+                    </tr>
+                }
+            </table>
+        }
+
+       
+
+
+</div>
+</div>
+
+
+
+
+

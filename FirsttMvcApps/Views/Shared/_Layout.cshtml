@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+         
+</head>
+
+
+
+<body>
+    <header class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h1>Check-In System</h1>
+            </div>
+        </div>
+
+
+        
+    </header>
+
+
+
+    <div class="container">
+        <div class="row">
+            
+                @RenderBody()
+            
+        </div>
+    </div>
+
+
+
+
+    <footer class="container">
+
+        
+        <div class="row text-center">
+            <div class="col">
+
+              
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>
